@@ -104,11 +104,11 @@ Ainda nesta página fica a seção **"Crie sua pizza com Inteligência Artificia
 onde o cliente escolhe 3 ingredientes e a IA gera um nome e uma descrição para a
 pizza personalizada.
 
-![Seção do gerador de pizza com IA](prints/print_3.png)
+![Seção do gerador de pizza com IA](prints/print_4.png)
 
 No fim da página estão os blocos "Sobre" e "Contato".
 
-![Seções Sobre e Contato](prints/print_4.png)
+![Seções Sobre e Contato](prints/print_2.png)
 
 ### 2. Cadastro (`cadastro.php`)
 
