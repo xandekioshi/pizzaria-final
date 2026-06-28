@@ -27,7 +27,7 @@ if ($tipo === 'faturamento') {
 
 $linhas = $pdo->query($sql)->fetchAll();
 
-// Monta dois arrays (rótulos e valores) que o Chart.js entende.
+
 $labels = [];
 $valores = [];
 foreach ($linhas as $linha) {
