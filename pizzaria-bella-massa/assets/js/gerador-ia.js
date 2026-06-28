@@ -1,8 +1,4 @@
-/**
- * gerador-ia.js  (Extra 4)
- * Abre o modal, deixa escolher exatamente 3 ingredientes, pede ao PHP
- * um nome/descrição e permite adicionar a pizza criada ao carrinho.
- */
+// GRANDE PARTE DO JAVA FOI REVISADO E COMPLEMENTADO PELO CLAUDE OPUS 4.8
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal-ia');
   const abrir = document.getElementById('botao-abrir-modal-ia');
@@ -12,15 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultado = document.getElementById('resultado-pizza-ia');
   const botaoAdicionar = document.getElementById('botao-adicionar-pizza-ia');
 
-  // Abrir / fechar o modal.
+ 
   abrir.addEventListener('click', () => modal.showModal());
   fechar.addEventListener('click', () => modal.close());
 
-  // Gerar a pizza.
+
   gerar.addEventListener('click', async () => {
     mensagemErro.hidden = true;
 
-    // Pega os ingredientes marcados.
+   
     const marcados = [...document.querySelectorAll('input[name="ingrediente"]:checked')];
     if (marcados.length !== 3) {
       mensagemErro.textContent = 'Selecione exatamente 3 ingredientes.';
@@ -28,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Monta os dados para enviar.
+    
     const dados = new URLSearchParams();
     marcados.forEach((c) => dados.append('ingredientes[]', c.value));
 
@@ -45,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Mostra o resultado.
+     
       document.getElementById('nome-pizza-ia').textContent = pizza.nome;
       document.getElementById('descricao-pizza-ia').textContent = pizza.descricao;
       document.getElementById('preco-pizza-ia').textContent =
         'R$ ' + parseFloat(pizza.preco).toFixed(2).replace('.', ',');
 
-      // Guarda os dados no botão de adicionar.
+     
       botaoAdicionar.dataset.id = pizza.id;
       botaoAdicionar.dataset.nome = pizza.nome;
       botaoAdicionar.dataset.preco = pizza.preco;
@@ -63,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Adicionar a pizza criada ao carrinho (função do carrinho.js).
+  
   botaoAdicionar.addEventListener('click', () => {
     adicionarItem({
       id: parseInt(botaoAdicionar.dataset.id, 10),
