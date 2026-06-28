@@ -1,8 +1,5 @@
 <?php
-/**
- * includes/footer.php
- * Rodapé usado em todas as páginas públicas.
- */
+
 ?>
 <footer class="rodape">
   <div class="container">
