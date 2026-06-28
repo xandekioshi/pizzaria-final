@@ -1,8 +1,4 @@
-/* =========================================================
-   style.css - estilos do site (cliente)
-   Mantido simples e organizado.
-   ========================================================= */
-
+/* ---------- LEMBRANDO QUE BOA PARTE DO CSS FOI MODELADO COM AJUDA DO CLAUDE OPUS 4.8 ---------- */
 :root {
   --cor-primaria: #c0392b;
   --cor-primaria-escura: #a93226;
@@ -32,7 +28,7 @@ body {
   padding: 0 16px;
 }
 
-/* ---------- Botões ---------- */
+
 .botao {
   display: inline-block;
   padding: 10px 18px;
@@ -51,7 +47,7 @@ body {
 .botao--whatsapp { background-color: var(--cor-verde); color: #fff; }
 .botao--bloco { display: block; width: 100%; }
 
-/* ---------- Cabeçalho ---------- */
+
 .cabecalho {
   background-color: var(--cor-branco);
   box-shadow: var(--sombra);
@@ -90,7 +86,7 @@ body {
 }
 .nav-principal__lista a:hover { color: var(--cor-primaria); }
 
-/* Botão do carrinho */
+
 .botao-carrinho {
   display: flex;
   align-items: center;
@@ -111,7 +107,7 @@ body {
   font-weight: bold;
 }
 
-/* ---------- Hero ---------- */
+
 .hero {
   background-color: var(--cor-secundaria);
   color: #fff;
@@ -121,14 +117,14 @@ body {
 .hero__titulo { font-size: 32px; margin: 0 0 10px; }
 .hero__subtitulo { margin: 0 0 20px; }
 
-/* ---------- Títulos de seção ---------- */
+
 .titulo-secao {
   font-size: 26px;
   color: var(--cor-secundaria);
   margin: 30px 0 16px;
 }
 
-/* ---------- Cardápio ---------- */
+
 .cardapio { padding: 20px 0 40px; }
 .cardapio__abas {
   display: flex;
@@ -179,7 +175,7 @@ body {
 }
 .produto-card__preco { font-weight: bold; color: var(--cor-primaria); }
 
-/* ---------- Gerador de IA ---------- */
+
 .gerador-ia {
   background-color: #fff3cd;
   padding: 30px 0;
@@ -223,10 +219,10 @@ body {
   border-radius: 6px;
 }
 
-/* ---------- Sobre / Contato ---------- */
+
 .sobre, .contato { padding: 20px 0; }
 
-/* ---------- Carrinho lateral ---------- */
+
 .carrinho-lateral {
   position: fixed;
   top: 0;
@@ -275,7 +271,7 @@ body {
 .carrinho-lateral__linha { display: flex; justify-content: space-between; margin-bottom: 6px; }
 .carrinho-lateral__acoes { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
 
-/* Fundo escuro */
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -283,7 +279,7 @@ body {
   z-index: 900;
 }
 
-/* ---------- Formulários ---------- */
+
 .formulario { display: flex; flex-direction: column; gap: 12px; }
 .campo-formulario { display: flex; flex-direction: column; gap: 4px; }
 .campo-formulario label { font-size: 14px; font-weight: bold; }
@@ -315,7 +311,7 @@ body {
   font-size: 14px;
 }
 
-/* ---------- Páginas de autenticação ---------- */
+
 .cabecalho--simples .cabecalho__conteudo { justify-content: space-between; }
 .conteudo-autenticacao { padding: 40px 0; }
 .cartao-autenticacao {
@@ -329,7 +325,7 @@ body {
 .cartao-autenticacao__titulo { margin-top: 0; text-align: center; }
 .cartao-autenticacao__rodape { text-align: center; margin-top: 16px; font-size: 14px; }
 
-/* ---------- Checkout ---------- */
+
 .conteudo-checkout { padding: 30px 0; }
 .checkout__grade {
   display: grid;
@@ -347,7 +343,7 @@ body {
 .checkout__linha-total { display: flex; justify-content: space-between; margin-bottom: 6px; }
 .checkout__linha-total--destaque { font-weight: bold; font-size: 18px; }
 
-/* ---------- Confirmação do pedido ---------- */
+
 .conteudo-confirmacao { padding: 30px 0; }
 .cartao-confirmacao {
   background: #fff;
@@ -390,7 +386,7 @@ body {
 
 .status-pedido-texto { text-align: center; }
 
-/* ---------- Rodapé ---------- */
+
 .rodape {
   background: var(--cor-secundaria);
   color: #fff;
@@ -400,7 +396,7 @@ body {
   font-size: 14px;
 }
 
-/* ---------- Responsivo simples ---------- */
+
 @media (max-width: 720px) {
   .checkout__grade { grid-template-columns: 1fr; }
   .lista-ingredientes { grid-template-columns: 1fr; }
