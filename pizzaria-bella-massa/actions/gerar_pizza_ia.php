@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 
 const GEMINI_API_KEY = '';
 
-// Recebe os ingredientes (esperamos exatamente 3).
+
 $ingredientes = $_POST['ingredientes'] ?? [];
 if (!is_array($ingredientes) || count($ingredientes) !== 3) {
     echo json_encode(['erro' => 'Selecione exatamente 3 ingredientes.']);
@@ -19,7 +19,7 @@ $listaTexto = implode(', ', $ingredientes);
 $nome = '';
 $descricao = '';
 
-// ---------- Opção 1: IA de verdade (Gemini via cURL) ----------
+
 if (GEMINI_API_KEY !== '') {
     $prompt = "Crie um nome curto e criativo (máx 4 palavras) e uma descrição "
             . "apetitosa de uma linha para uma pizza com os ingredientes: $listaTexto. "
@@ -45,16 +45,16 @@ if (GEMINI_API_KEY !== '') {
     }
 }
 
-// ---------- Opção 2: gerador local (se não usou IA ou ela falhou) ----------
+
 if ($nome === '') {
     $nome = 'Pizza ' . $ingredientes[0] . ' ' . $ingredientes[1];
     $descricao = 'Combinação especial de ' . $listaTexto . ' na nossa massa artesanal.';
 }
 
-// Preço fixo para pizzas personalizadas.
+
 $preco = 49.90;
 
-// Salva no banco para poder ir ao carrinho.
+
 $stmt = $pdo->prepare(
     "INSERT INTO produtos (nome, descricao, preco, tipo)
      VALUES (:nome, :descricao, :preco, 'pizza')
