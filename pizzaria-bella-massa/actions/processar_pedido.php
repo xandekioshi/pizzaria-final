@@ -108,6 +108,6 @@ try {
     exit('Erro ao salvar o pedido: ' . $e->getMessage());
 }
 
-// 6) Tudo certo: vai para a tela de confirmação.
+
 header('Location: ../pedido-confirmado.php?id=' . $idPedido);
 exit;
