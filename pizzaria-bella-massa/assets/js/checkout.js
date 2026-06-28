@@ -1,10 +1,4 @@
-/**
- * checkout.js
- * - Lê o carrinho do localStorage e mostra o resumo.
- * - Pede o frete ao back-end (PHP) e atualiza o total.
- * - Antes de enviar o pedido, copia o carrinho e o endereço para os
- *   campos ocultos do formulário.
- */
+// GRANDE PARTE DO JAVA FOI REVISADO E COMPLEMENTADO PELO CLAUDE OPUS 4.8
 
 const CHAVE_CARRINHO = 'carrinho';
 
@@ -19,7 +13,7 @@ function formatarReais(valor) {
 let subtotalAtual = 0;
 let freteAtual = 0;
 
-// Mostra os itens do carrinho no resumo.
+
 function montarResumo() {
   const carrinho = lerCarrinho();
   const lista = document.getElementById('resumo-itens-pedido');
@@ -44,17 +38,17 @@ function montarResumo() {
   atualizarTotal();
 }
 
-// Soma subtotal + frete.
+
 function atualizarTotal() {
   const total = subtotalAtual + freteAtual;
   document.getElementById('resumo-total-geral').textContent = formatarReais(total);
 
-  // Guarda os valores nos campos ocultos do formulário.
+
   document.getElementById('frete-valor-oculto').value = freteAtual.toFixed(2);
   document.getElementById('total-valor-oculto').value = total.toFixed(2);
 }
 
-// Pede o frete ao PHP (o back-end é quem calcula).
+
 async function calcularFrete() {
   const cep = document.getElementById('cep').value;
   const estado = document.getElementById('estado').value;
@@ -92,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('botao-calcular-frete').addEventListener('click', calcularFrete);
 
-  // Antes de enviar, prepara os campos ocultos.
+  
   document.getElementById('form-finalizar-pedido').addEventListener('submit', (e) => {
     const carrinho = lerCarrinho();
 
@@ -107,14 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Envia só id e quantidade; o PHP busca o preço real no banco.
+   
     const itensSimples = carrinho.map((item) => ({
       id: item.id,
       quantidade: item.quantidade,
     }));
     document.getElementById('carrinho-json').value = JSON.stringify(itensSimples);
 
-    // Copia o endereço para os campos ocultos do formulário.
+   
     document.getElementById('end-cep').value = document.getElementById('cep').value;
     document.getElementById('end-rua').value = document.getElementById('rua').value;
     document.getElementById('end-numero').value = document.getElementById('numero').value;
@@ -123,6 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('end-cidade').value = document.getElementById('cidade').value;
     document.getElementById('end-estado').value = document.getElementById('estado').value;
 
-    // O carrinho é limpo na página de confirmação (rastreio.js).
+   
   });
 });
