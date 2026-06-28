@@ -4,7 +4,7 @@ if (isset($_SESSION['usuario_id'])) {
     header('Location: index.php');
     exit;
 }
-// Mensagens de erro vindas do actions/cadastro.php
+
 $erros = [
     'email'  => 'Este e-mail já está cadastrado.',
     'senha'  => 'As senhas não coincidem.',
