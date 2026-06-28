@@ -1,22 +1,10 @@
 <?php
-/**
- * actions/gerar_pizza_ia.php  (Extra 4)
- * Recebe 3 ingredientes e devolve um nome + descrição criativos em JSON.
- * Depois salva essa pizza na tabela "produtos" para que ela possa ser
- * adicionada ao carrinho como qualquer outro produto.
- *
- * Como funciona:
- *   - Se você preencher a constante GEMINI_API_KEY, ele chama a API do
- *     Gemini via cURL (atende ao requisito do extra).
- *   - Se deixar em branco, ele gera um nome/descrição localmente, então
- *     o projeto continua funcionando sem precisar de chave de API.
- */
+//SEÇÃO INTEIRA FEITA COM AJUDA DO CLAUDE OPUS 4.8 E REVISADA POR ALEXANDRE
 session_start();
 require_once __DIR__ . '/../config/database.php';
 header('Content-Type: application/json');
 
-// >>> Cole aqui a sua chave do Google Gemini para usar IA de verdade. <<<
-// Deixe '' (vazio) para usar o gerador local.
+
 const GEMINI_API_KEY = '';
 
 // Recebe os ingredientes (esperamos exatamente 3).
