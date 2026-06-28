@@ -1,15 +1,10 @@
-/**
- * admin-produtos.js
- * - Abre o modal vazio para "Novo produto".
- * - Abre o modal já preenchido para "Editar".
- * - Pede confirmação antes de excluir.
- */
+// GRANDE PARTE DO JAVA FOI REVISADO E COMPLEMENTADO PELO CLAUDE OPUS 4.8
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal-produto');
   const overlay = document.getElementById('overlay-admin');
   const titulo = document.getElementById('titulo-modal-produto');
 
-  // Campos do formulário.
+  
   const campoId = document.getElementById('produto-id');
   const campoNome = document.getElementById('produto-nome');
   const campoDescricao = document.getElementById('produto-descricao');
@@ -25,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.close();
   }
 
-  // Novo produto: limpa o formulário.
+ 
   document.getElementById('botao-novo-produto').addEventListener('click', () => {
     titulo.textContent = 'Novo produto';
     campoId.value = '';
@@ -36,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     abrirModal();
   });
 
-  // Editar: preenche o formulário com os dados da linha.
+ 
   document.querySelectorAll('.botao-editar-produto').forEach((botao) => {
     botao.addEventListener('click', () => {
       const linha = botao.closest('tr');
@@ -50,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Excluir: confirma e redireciona para o script PHP.
+
   document.querySelectorAll('.botao-excluir-produto').forEach((botao) => {
     botao.addEventListener('click', () => {
       if (confirm('Tem certeza que deseja excluir este produto?')) {
