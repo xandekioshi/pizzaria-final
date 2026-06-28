@@ -7,7 +7,7 @@ if (!isset($_SESSION['usuario_id']) || empty($_SESSION['is_admin'])) {
     exit;
 }
 
-// Lista todos os produtos.
+
 $produtos = $pdo->query("SELECT * FROM produtos ORDER BY id")->fetchAll();
 ?>
 <!DOCTYPE html>
@@ -74,7 +74,7 @@ $produtos = $pdo->query("SELECT * FROM produtos ORDER BY id")->fetchAll();
         </table>
       </section>
 
-      <!-- FORMULÁRIO (CRIAR/EDITAR) -->
+      
       <dialog id="modal-produto" class="modal-produto">
         <form id="form-produto" action="../actions/produtos_salvar.php" method="POST" class="formulario">
           <header class="modal-produto__cabecalho">
